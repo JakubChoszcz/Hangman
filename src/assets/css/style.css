@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(122.33deg, #F3F5F2 80%, #4B6BEE 20%);
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.typped {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 37px;
+  color: #484C51;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+}
+
+.typped-letters {
+  font-size: 72px;
+  line-height: 84px;
+  max-width: 600px;
+  color: #87C558;
+  text-align: center;
+}
+
+.hangman-picture {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 427px;
+  height: 540px;
+}
+
+.hangman-picture .hpe {
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hangman-picture .hook {
+  background-image: url("../images/hook.png");
+  width: 340px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+}
+
+.hangman-picture .hpe-1 {
+  background-image: url("../images/man/head.png");
+  width: 164px;
+  height: 192px;
+  left: 219px;
+  top: 60px;
+}
+
+.hangman-picture .hpe-2 {
+  background-image: url("../images/man/left-arm.png");
+  width: 125px;
+  height: 116px;
+  left: 177px;
+  top: 250px;
+}
+
+.hangman-picture .hpe-3 {
+  background-image: url("../images/man/right-arm.png");
+  width: 125px;
+  height: 116px;
+  left: 302px;
+  top: 250px;
+}
+
+.hangman-picture .hpe-4 {
+  background-image: url("../images/man/butt.png");
+  width: 86px;
+  height: 35px;
+  left: 259px;
+  top: 352px;
+}
+
+.hangman-picture .hpe-5 {
+  background-image: url("../images/man/left-leg.png");
+  width: 107px;
+  height: 186px;
+  left: 194px;
+  top: 354px;
+}
+
+.hangman-picture .hpe-6 {
+  background-image: url("../images/man/right-leg.png");
+  width: 107px;
+  height: 186px;
+  left: 302px;
+  top: 354px;
+}
+
+.hangman-picture .h {
+  display: none;
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.game-board {
+  width: 96px;
+  height: 96px;
+  background-color: #52545A;
+  border-radius: 25px;
+  margin: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F3F5F2;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .typped {
+    top: 24px;
+    right: 50px;
+  }
+  .typped-letters {
+    line-height: 4rem;
+  }
+  .hangman-picture {
+    width: 304px;
+    height: 384px;
+  }
+  .hangman-picture .hpe {
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+  }
+  .hangman-picture .hook {
+    width: 241px;
+    height: 177px;
+    left: 0px;
+    top: 0px;
+  }
+  .hangman-picture .hpe-1 {
+    width: 116px;
+    height: 136px;
+    left: 155px;
+    top: 42px;
+  }
+  .hangman-picture .hpe-2 {
+    width: 89px;
+    height: 82px;
+    left: 125px;
+    top: 177px;
+  }
+  .hangman-picture .hpe-3 {
+    width: 89px;
+    height: 82px;
+    left: 212px;
+    top: 177px;
+  }
+  .hangman-picture .hpe-4 {
+    width: 61px;
+    height: 25px;
+    left: 183px;
+    top: 248px;
+  }
+  .hangman-picture .hpe-5 {
+    width: 76px;
+    height: 132px;
+    left: 136px;
+    top: 251px;
+  }
+  .hangman-picture .hpe-6 {
+    width: 76px;
+    height: 132px;
+    left: 214px;
+    top: 251px;
+  }
+  .game-board {
+    width: 72px;
+    height: 72px;
+    margin: 6px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .typped-info {
+    font-size: 24px;
+  }
+  .typped-letters {
+    font-size: 48px;
+  }
+  .game-board {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .typped {
+    top: auto;
+    right: auto;
+    padding: 10px;
+    width: 100%;
+  }
+  .typped-letters {
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 3rem;
+  }
+  .game {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 380px;
+  }
+}
+
+@media (max-width: 576px) {
+  .typped {
+    padding: 5px;
+  }
+  .typped-info {
+    font-size: 22px;
+  }
+  .typped-letters {
+    max-width: 320px;
+    font-size: 27px;
+    line-height: 1.8rem;
+  }
+  .hangman-picture {
+    width: 187px;
+    height: 227px;
+  }
+  .hangman-picture .hook {
+    width: 155px;
+    height: 113px;
+    left: 0px;
+    top: 0px;
+  }
+  .hangman-picture .hpe-1 {
+    width: 65px;
+    height: 76px;
+    left: 104px;
+    top: 36px;
+  }
+  .hangman-picture .hpe-2 {
+    width: 49px;
+    height: 46px;
+    left: 88px;
+    top: 111px;
+  }
+  .hangman-picture .hpe-3 {
+    width: 49px;
+    height: 46px;
+    left: 137px;
+    top: 111px;
+  }
+  .hangman-picture .hpe-4 {
+    width: 34px;
+    height: 14px;
+    left: 120px;
+    top: 151px;
+  }
+  .hangman-picture .hpe-5 {
+    width: 42px;
+    height: 73px;
+    left: 95px;
+    top: 153px;
+  }
+  .hangman-picture .hpe-6 {
+    width: 42px;
+    height: 73px;
+    left: 137px;
+    top: 153px;
+  }
+  .game {
+    width: 320px;
+    bottom: 5px;
+  }
+  .game-board {
+    width: 58px;
+    height: 58px;
+    margin: 3px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

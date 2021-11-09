@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(122.33deg, #F3F5F2 80%, #4B6BEE 20%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.typped {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;    
+    color: #484C51;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+
+    &-info {
+        
+    }
+    
+    &-letters {
+        font-size: 72px;
+        line-height: 84px;
+        max-width: 600px;
+        color: #87C558;
+        text-align: center;
+    }
+}
+
+.hangman-picture {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 427px;
+    height: 540px;
+
+    .hpe {
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hook {
+        background-image: url('../images/hook.png');
+        width: 340px;
+        height: 250px;
+        left: 0px;
+        top: 0px;
+    }
+
+    .hpe-1 {
+        background-image: url('../images/man/head.png');
+        width: 164px;
+        height: 192px;
+        left: 219px;
+        top: 60px;
+    }
+
+    .hpe-2 {
+        background-image: url('../images/man/left-arm.png');
+        width: 125px;
+        height: 116px;
+        left: 177px;
+        top: 250px;
+        
+    }
+
+    .hpe-3 {
+        background-image: url('../images/man/right-arm.png');
+        width: 125px;
+        height: 116px;
+        left: 302px;
+        top: 250px;
+    }
+
+    .hpe-4 {
+        background-image: url('../images/man/butt.png');
+        width: 86px;
+        height: 35px;
+        left: 259px;
+        top: 352px;
+    }
+
+    .hpe-5 {
+        background-image: url('../images/man/left-leg.png');
+        width: 107px;
+        height: 186px;
+        left: 194px;
+        top: 354px;
+    }
+
+    .hpe-6 {
+        background-image: url('../images/man/right-leg.png');
+        width: 107px;
+        height: 186px;
+        left: 302px;
+        top: 354px;
+    }
+
+    .h {
+        display: none;
+    }
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &-board {
+        width: 96px;
+        height: 96px;
+        background-color: #52545A;
+        border-radius: 25px;
+        margin: 12px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #F3F5F2;
+        font-size: 32px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 1200px) {
+    .typped {
+        top: 24px;
+        right: 50px;
+    
+        &-info {
+            
+        }
+        
+        &-letters {
+            line-height: 4rem;
+        }
+    }
+    
+    .hangman-picture {
+        width: 304px;
+        height: 384px;
+
+        .hpe {
+            background-repeat: no-repeat;
+            position: absolute;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hook {
+            width: 241px;
+            height: 177px;
+            left: 0px;
+            top: 0px;
+        }
+    
+        .hpe-1 {
+            width: 116px;
+            height: 136px;
+            left: 155px;
+            top: 42px;
+        }
+    
+        .hpe-2 {
+            width: 89px;
+            height: 82px;
+            left: 125px;
+            top: 177px;
+        }
+    
+        .hpe-3 {
+            width: 89px;
+            height: 82px;
+            left: 212px;
+            top: 177px;
+        }
+    
+        .hpe-4 {
+            width: 61px;
+            height: 25px;
+            left: 183px;
+            top: 248px;
+        }
+    
+        .hpe-5 {
+            width: 76px;
+            height: 132px;
+            left: 136px;
+            top: 251px;
+        }
+    
+        .hpe-6 {
+            width: 76px;
+            height: 132px;
+            left: 214px;
+            top: 251px;
+        }
+    }
+
+    .game {
+        &-board {
+            width: 72px;
+            height: 72px;
+            margin: 6px;
+            border-radius: 16px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .typped {
+        &-info {
+            font-size: 24px;
+        }
+        
+        &-letters {
+            font-size: 48px;
+        }
+    }
+
+    .game {
+        &-board {
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .typped {
+        top: auto;
+        right: auto;
+        padding: 10px;
+        width: 100%;
+    
+        &-info {
+        }
+        
+        &-letters {
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 3rem;
+        }
+    }
+    
+    .hangman-picture {
+
+        .hpe {
+        }
+
+        .hook {
+        }
+    
+        .hpe-1 {
+        }
+    
+        .hpe-2 {
+        }
+    
+        .hpe-3 {
+        }
+    
+        .hpe-4 {
+        }
+    
+        .hpe-5 {
+        }
+    
+        .hpe-6 {
+        }
+    }
+
+    .game {
+        flex-wrap: wrap;
+        width: 380px;
+        &-board {
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .typped {
+        padding: 5px;
+    
+        &-info {
+            font-size: 22px;
+        }
+        
+        &-letters {
+            max-width: 320px;
+            font-size: 27px;
+            line-height: 1.8rem;
+        }
+    }
+    
+    .hangman-picture {
+        width: 187px;
+        height: 227px;
+
+        .hpe {
+        }
+
+        .hook {
+            width: 155px;
+            height: 113px;
+            left: 0px;
+            top: 0px;
+        }
+    
+        .hpe-1 {
+            width: 65px;
+            height: 76px;
+            left: 104px;
+            top: 36px;
+        }
+    
+        .hpe-2 {
+            width: 49px;
+            height: 46px;
+            left: 88px;
+            top: 111px;
+        }
+    
+        .hpe-3 {
+            width: 49px;
+            height: 46px;
+            left: 137px;
+            top: 111px;
+        }
+    
+        .hpe-4 {
+            width: 34px;
+            height: 14px;
+            left: 120px;
+            top: 151px;
+        }
+    
+        .hpe-5 {
+            width: 42px;
+            height: 73px;
+            left: 95px;
+            top: 153px;
+        }
+    
+        .hpe-6 {
+            width: 42px;
+            height: 73px;
+            left: 137px;
+            top: 153px;
+        }
+    }
+
+    .game {
+        width: 320px;
+        bottom: 5px;
+        &-board {
+            width: 58px;
+            height: 58px;
+            margin: 3px;
+        }
+    }
+}
